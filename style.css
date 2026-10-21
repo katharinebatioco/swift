@@ -1,0 +1,393 @@
+/* ============================================================
+   Swift Chords — a Taylor Swift campfire chordbook
+   Pure CSS. No JavaScript.
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root {
+  /* Paper + ink */
+  --paper:      #fbf6ec;
+  --paper-2:    #f5eddb;
+  --ink:        #23201c;
+  --ink-soft:   #5d5648;
+  --hairline:   #e3d9c2;
+
+  /* Accent */
+  --gold:       #b8863f;
+  --gold-deep:  #8a5f26;
+  --accent:     #b03a3a;
+
+  /* Type */
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --sans: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+  --mono: "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", monospace;
+}
+
+/* ---------- Reset + base ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.55;
+  font-size: 1.0625rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: #e8c98b; color: var(--ink); }
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  padding: 4.5rem 1.5rem 2.75rem;
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin: 0 0 0.75rem;
+}
+
+.masthead h1 {
+  font-size: clamp(2.9rem, 9vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  margin: 0 0 1.1rem;
+}
+
+.lede {
+  max-width: 46em;
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.lede strong { color: var(--ink); }
+.lede code {
+  font-family: var(--mono);
+  font-size: 0.95em;
+  background: var(--paper-2);
+  border: 1px solid var(--hairline);
+  border-radius: 5px;
+  padding: 0.05em 0.4em;
+  color: var(--ink);
+}
+
+/* ---------- Filters (CSS-only, radio-chip based) ---------- */
+.filters {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(var(--paper) 88%, transparent);
+  padding: 0.9rem 1.5rem 1.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.8rem;
+  justify-content: center;
+  align-items: baseline;
+  border-bottom: 1px solid var(--hairline);
+  backdrop-filter: blur(6px);
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.filter-label {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-right: 0.35rem;
+}
+
+/* The radio input is visually hidden; the label text is the button */
+.chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.chip {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  border: 1px solid var(--hairline);
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.32rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  user-select: none;
+}
+
+.chip:hover {
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.chip-count {
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  opacity: 0.75;
+  margin-left: 0.15rem;
+}
+
+.chip:has(input:checked) {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.chip:has(input:checked) .chip-count { color: var(--paper); opacity: 0.65; }
+
+.chip:has(input:focus-visible) {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* The dots used for difficulty chips */
+.dots { letter-spacing: 0.08em; margin-right: 0.2em; }
+
+/* ---------- Songbook ---------- */
+.songbook {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 4rem;
+}
+
+/* ---- Era chapters ---- */
+.era-group { margin-top: 3rem; }
+
+.era-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.era-mark {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--era, var(--gold));
+  flex: none;
+}
+
+.era-sub {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+
+/* ---- Song cards ---- */
+.songs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.song {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem 1.05rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.song:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 24px -14px rgba(35, 32, 28, 0.35);
+}
+
+.song-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.song h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.song-meta {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0.3rem 0 0.8rem;
+}
+
+.song-prog {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.8rem;
+}
+
+.p-label {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-right: 0.15rem;
+}
+
+/* Chord chips */
+.chord {
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--paper-2);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 0.28rem 0.62rem;
+  min-width: 2.6em;
+  text-align: center;
+}
+
+/* Difficulty badges */
+.badge {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  flex: none;
+}
+
+.diff-1 { color: #4c7a52; }
+.diff-2 { color: #9a7423; }
+.diff-3 { color: var(--accent); }
+
+/* Lyric teaser */
+.song-line {
+  margin: 0;
+  font-style: italic;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  border-left: 3px solid var(--gold);
+  padding-left: 0.75rem;
+}
+
+/* ---------- The pure-CSS filter engine ---------- */
+/* When a specific era is picked, hide every song that ISN'T in that era.
+   (:has() is the CSS selector that makes this work with zero JavaScript.) */
+body:has(input#era-debut:checked)   .song:not([data-era="debut"])     { display: none; }
+body:has(input#era-fearless:checked) .song:not([data-era="fearless"])  { display: none; }
+body:has(input#era-speak-now:checked) .song:not([data-era="speak-now"]) { display: none; }
+body:has(input#era-red:checked)     .song:not([data-era="red"])        { display: none; }
+body:has(input#era-1989:checked)    .song:not([data-era="1989"])       { display: none; }
+
+/* Same trick for difficulty. A song survives only if it matches BOTH
+   the chosen era AND the chosen difficulty — the two filters AND together
+   automatically, because each rule hides only non-matching songs. */
+body:has(input#diff-1:checked) .song:not([data-difficulty="1"]) { display: none; }
+body:has(input#diff-2:checked) .song:not([data-difficulty="2"]) { display: none; }
+body:has(input#diff-3:checked) .song:not([data-difficulty="3"]) { display: none; }
+
+/* ---------- Colophon ---------- */
+.colophon {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 4.5rem;
+}
+
+.colophon h2 {
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.9rem;
+  padding-top: 2.5rem;
+  border-top: 2px solid var(--ink);
+}
+
+.colophon ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.colophon li {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+
+.colophon li strong {
+  font-family: var(--sans);
+  color: var(--ink);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.fine-print {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  opacity: 0.85;
+  border-top: 1px solid var(--hairline);
+  padding-top: 1rem;
+  max-width: 56em;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .filters { justify-content: flex-start; }
+  .masthead { padding-top: 3rem; }
+  .song { border-radius: 12px; }
+  .songs { grid-template-columns: 1fr; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}

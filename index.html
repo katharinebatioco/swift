@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swift Chords — A Taylor Swift Campfire Chordbook</title>
+  <meta name="description" content="21 simple Taylor Swift songs with chords, keys, tempos and era filters. Pure HTML + CSS.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <p class="eyebrow">A Campfire Chordbook</p>
+    <h1>Swift&nbsp;Chords</h1>
+    <p class="lede">
+      Twenty-one Taylor Swift songs in <em>simple versions</em> — open chords, no barre
+      gymnastics. Every song here is built from the same friendly pattern:
+      <strong>I – V – vi – IV</strong> (think <code>G&nbsp;D&nbsp;Em&nbsp;C</code>).
+      Learn that once and you already know most of this book.
+    </p>
+  </header>
+
+  <!-- CSS-only filters: each chip is a radio button. Pure CSS shows/hides songs below. -->
+  <section class="filters" aria-label="Filter songs">
+    <div class="filter-group">
+      <span class="filter-label">Era</span>
+      <label class="chip"><input type="radio" name="era" value="all" id="era-all" checked>All <span class="chip-count">21</span></label>
+      <label class="chip"><input type="radio" name="era" value="debut" id="era-debut">Debut <span class="chip-count">3</span></label>
+      <label class="chip"><input type="radio" name="era" value="fearless" id="era-fearless">Fearless <span class="chip-count">3</span></label>
+      <label class="chip"><input type="radio" name="era" value="speak-now" id="era-speak-now">Speak Now <span class="chip-count">5</span></label>
+      <label class="chip"><input type="radio" name="era" value="red" id="era-red">Red <span class="chip-count">5</span></label>
+      <label class="chip"><input type="radio" name="era" value="1989" id="era-1989">1989 <span class="chip-count">5</span></label>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Difficulty</span>
+      <label class="chip"><input type="radio" name="diff" value="all" id="diff-all" checked>Any</label>
+      <label class="chip"><input type="radio" name="diff" value="1" id="diff-1"><span class="dots" aria-hidden="true">●</span> Easy <span class="chip-count">10</span></label>
+      <label class="chip"><input type="radio" name="diff" value="2" id="diff-2"><span class="dots" aria-hidden="true">●●</span> Medium <span class="chip-count">9</span></label>
+      <label class="chip"><input type="radio" name="diff" value="3" id="diff-3"><span class="dots" aria-hidden="true">●●●</span> Stretch <span class="chip-count">2</span></label>
+    </div>
+  </section>
+
+  <main class="songbook">
+
+    <!-- ═══ Debut ═══ -->
+    <section class="era-group" data-era="debut">
+      <h2 class="era-title"><span class="era-mark" style="--era:#6a8f6e"></span>Debut <span class="era-sub">2006 · country</span></h2>
+      <div class="songs">
+
+        <article class="song" data-era="debut" data-difficulty="1">
+          <header class="song-head">
+            <h3>Our Song</h3>
+            <span class="badge diff-1" title="Difficulty: Easy">●○○</span>
+          </header>
+          <p class="song-meta">Key G · 132 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">G</span><span class="chord">C</span><span class="chord">Em</span><span class="chord">D</span>
+          </p>
+          <blockquote class="song-line">“Our song is the slammin' screen door…”</blockquote>
+        </article>
+
+        <article class="song" data-era="debut" data-difficulty="1">
+          <header class="song-head">
+            <h3>Teardrops on My Guitar</h3>
+            <span class="badge diff-1" title="Difficulty: Easy">●○○</span>
+          </header>
+          <p class="song-meta">Key G · 100 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">G</span><span class="chord">D</span><span class="chord">Em</span><span class="chord">C</span>
+          </p>
+          <blockquote class="song-line">“He's the reason for the teardrops on my guitar…”</blockquote>
+        </article>
+
+        <article class="song" data-era="debut" data-difficulty="1">
+          <header class="song-head">
+            <h3>Tim McGraw</h3>
+            <span class="badge diff-1" title="Difficulty: Easy">●○○</span>
+          </header>
+          <p class="song-meta">Key C · 84 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">C</span><span class="chord">G</span><span class="chord">Am</span><span class="chord">F</span>
+          </p>
+          <blockquote class="song-line">“And I hope the sun shines down on you…”</blockquote>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══ Fearless ═══ -->
+    <section class="era-group" data-era="fearless">
+      <h2 class="era-title"><span class="era-mark" style="--era:#b8863f"></span>Fearless <span class="era-sub">2008 · country pop</span></h2>
+      <div class="songs">
+
+        <article class="song" data-era="fearless" data-difficulty="2">
+          <header class="song-head">
+            <h3>Love Story</h3>
+            <span class="badge diff-2" title="Difficulty: Medium">●●○</span>
+          </header>
+          <p class="song-meta">Key G · 119 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">G</span><span class="chord">D</span><span class="chord">Em</span><span class="chord">C</span>
+          </p>
+          <blockquote class="song-line">“Marry me, Juliet, you never have to be alone…”</blockquote>
+        </article>
+
+        <article class="song" data-era="fearless" data-difficulty="1">
+          <header class="song-head">
+            <h3>You Belong with Me</h3>
+            <span class="badge diff-1" title="Difficulty: Easy">●○○</span>
+          </header>
+          <p class="song-meta">Key C · 130 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">C</span><span class="chord">G</span><span class="chord">Am</span><span class="chord">F</span>
+          </p>
+          <blockquote class="song-line">“If you could see that I'm the one who understands you…”</blockquote>
+        </article>
+
+        <article class="song" data-era="fearless" data-difficulty="1">
+          <header class="song-head">
+            <h3>Fifteen</h3>
+            <span class="badge diff-1" title="Difficulty: Easy">●○○</span>
+          </header>
+          <p class="song-meta">Key C · 95 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">C</span><span class="chord">G</span><span class="chord">Am</span><span class="chord">F</span>
+          </p>
+          <blockquote class="song-line">“You sit in class next to a redhead named Abigail…”</blockquote>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══ Speak Now ═══ -->
+    <section class="era-group" data-era="speak-now">
+      <h2 class="era-title"><span class="era-mark" style="--era:#8b7bb8"></span>Speak Now <span class="era-sub">2010 · country rock</span></h2>
+      <div class="songs">
+
+        <article class="song" data-era="speak-now" data-difficulty="1">
+          <header class="song-head">
+            <h3>Mean</h3>
+            <span class="badge diff-1" title="Difficulty: Easy">●○○</span>
+          </header>
+          <p class="song-meta">Key C · 108 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">C</span><span class="chord">G</span><span class="chord">Am</span><span class="chord">F</span>
+          </p>
+          <blockquote class="song-line">“You, with your words like knives and swords…”</blockquote>
+        </article>
+
+        <article class="song" data-era="speak-now" data-difficulty="3">
+          <header class="song-head">
+            <h3>Enchanted</h3>
+            <span class="badge diff-3" title="Difficulty: Stretch">●●●</span>
+          </header>
+          <p class="song-meta">Key G · 112 BPM · key change at the outro</p>
+          <p class="song-prog"><span class="p-label">Verse</span>
+            <span class="chord">G</span><span class="chord">D</span><span class="chord">Em</span><span class="chord">C</span>
+          </p>
+          <blockquote class="song-line">“There I was again tonight, forcing laughter, faking smiles…”</blockquote>
+        </article>
+
+        <article class="song" data-era="speak-now" data-difficulty="2">
+          <header class="song-head">
+            <h3>Back to December</h3>
+            <span class="badge diff-2" title="Difficulty: Medium">●●○</span>
+          </header>
+          <p class="song-meta">Key C · 140 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">C</span><span class="chord">G</span><span class="chord">Am</span><span class="chord">F</span>
+          </p>
+          <blockquote class="song-line">“I'm sorry for the things I said, I miss you like a little kid…”</blockquote>
+        </article>
+
+        <article class="song" data-era="speak-now" data-difficulty="2">
+          <header class="song-head">
+            <h3>Mine</h3>
+            <span class="badge diff-2" title="Difficulty: Medium">●●○</span>
+          </header>
+          <p class="song-meta">Key D · 132 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">D</span><span class="chord">A</span><span class="chord">Bm</span><span class="chord">G</span>
+          </p>
+          <blockquote class="song-line">“You are the best thing that's ever been mine…”</blockquote>
+        </article>
+
+        <article class="song" data-era="speak-now" data-difficulty="2">
+          <header class="song-head">
+            <h3>Sparks Fly</h3>
+            <span class="badge diff-2" title="Difficulty: Medium">●●○</span>
+          </header>
+          <p class="song-meta">Key G · 132 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">G</span><span class="chord">D</span><span class="chord">Em</span><span class="chord">C</span>
+          </p>
+          <blockquote class="song-line">“Drop everything now, meet me in the pouring rain…”</blockquote>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══ Red ═══ -->
+    <section class="era-group" data-era="red">
+      <h2 class="era-title"><span class="era-mark" style="--era:#b03a3a"></span>Red <span class="era-sub">2012 · pop country</span></h2>
+      <div class="songs">
+
+        <article class="song" data-era="red" data-difficulty="2">
+          <header class="song-head">
+            <h3>Red</h3>
+            <span class="badge diff-2" title="Difficulty: Medium">●●○</span>
+          </header>
+          <p class="song-meta">Key Am · 120 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">Am</span><span class="chord">F</span><span class="chord">C</span><span class="chord">G</span>
+          </p>
+          <blockquote class="song-line">“Loving him is like driving a new Maserati down a dead-end street…”</blockquote>
+        </article>
+
+        <article class="song" data-era="red" data-difficulty="3">
+          <header class="song-head">
+            <h3>All Too Well</h3>
+            <span class="badge diff-3" title="Difficulty: Stretch">●●●</span>
+          </header>
+          <p class="song-meta">Key G · 100 BPM · a long one — build your stamina</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">G</span><span class="chord">D</span><span class="chord">Em</span><span class="chord">C</span>
+          </p>
+          <blockquote class="song-line">“And you call me up again just to break me like a promise…”</blockquote>
+        </article>
+
+        <article class="song" data-era="red" data-difficulty="1">
+          <header class="song-head">
+            <h3>22</h3>
+            <span class="badge diff-1" title="Difficulty: Easy">●○○</span>
+          </header>
+          <p class="song-meta">Key C · 120 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">C</span><span class="chord">G</span><span class="chord">Am</span><span class="chord">F</span>
+          </p>
+          <blockquote class="song-line">“It feels like a perfect night to dress up like hipsters…”</blockquote>
+        </article>
+
+        <article class="song" data-era="red" data-difficulty="2">
+          <header class="song-head">
+            <h3>I Knew You Were Trouble</h3>
+            <span class="badge diff-2" title="Difficulty: Medium">●●○</span>
+          </header>
+          <p class="song-meta">Key Am · 130 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">Am</span><span class="chord">F</span><span class="chord">C</span><span class="chord">G</span>
+          </p>
+          <blockquote class="song-line">“And the saddest fear comes creeping in…”</blockquote>
+        </article>
+
+        <article class="song" data-era="red" data-difficulty="1">
+          <header class="song-head">
+            <h3>We Are Never Ever Getting Back Together</h3>
+            <span class="badge diff-1" title="Difficulty: Easy">●○○</span>
+          </header>
+          <p class="song-meta">Key C · 105 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">C</span><span class="chord">G</span><span class="chord">Am</span><span class="chord">F</span>
+          </p>
+          <blockquote class="song-line">“We are never ever ever getting back together…”</blockquote>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══ 1989 ═══ -->
+    <section class="era-group" data-era="1989">
+      <h2 class="era-title"><span class="era-mark" style="--era:#2f8f9d"></span>1989 <span class="era-sub">2014 · synth pop</span></h2>
+      <div class="songs">
+
+        <article class="song" data-era="1989" data-difficulty="2">
+          <header class="song-head">
+            <h3>Blank Space</h3>
+            <span class="badge diff-2" title="Difficulty: Medium">●●○</span>
+          </header>
+          <p class="song-meta">Key G · 96 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">G</span><span class="chord">D</span><span class="chord">Em</span><span class="chord">C</span>
+          </p>
+          <blockquote class="song-line">“So it's gonna be forever or it's gonna go down in flames…”</blockquote>
+        </article>
+
+        <article class="song" data-era="1989" data-difficulty="1">
+          <header class="song-head">
+            <h3>Shake It Off</h3>
+            <span class="badge diff-1" title="Difficulty: Easy">●○○</span>
+          </header>
+          <p class="song-meta">Key C · 160 BPM · stay relaxed, it's a strummer</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">C</span><span class="chord">G</span><span class="chord">Am</span><span class="chord">F</span>
+          </p>
+          <blockquote class="song-line">“Cause the players gonna play, play, play, play, play…”</blockquote>
+        </article>
+
+        <article class="song" data-era="1989" data-difficulty="2">
+          <header class="song-head">
+            <h3>Style</h3>
+            <span class="badge diff-2" title="Difficulty: Medium">●●○</span>
+          </header>
+          <p class="song-meta">Key Am · 95 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">Am</span><span class="chord">F</span><span class="chord">C</span><span class="chord">G</span>
+          </p>
+          <blockquote class="song-line">“You got that James Dean daydream look in your eye…”</blockquote>
+        </article>
+
+        <article class="song" data-era="1989" data-difficulty="2">
+          <header class="song-head">
+            <h3>Wildest Dreams</h3>
+            <span class="badge diff-2" title="Difficulty: Medium">●●○</span>
+          </header>
+          <p class="song-meta">Key G · 92 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">G</span><span class="chord">D</span><span class="chord">Em</span><span class="chord">C</span>
+          </p>
+          <blockquote class="song-line">“Say you'll remember me, standing in a nice dress…”</blockquote>
+        </article>
+
+        <article class="song" data-era="1989" data-difficulty="1">
+          <header class="song-head">
+            <h3>Bad Blood</h3>
+            <span class="badge diff-1" title="Difficulty: Easy">●○○</span>
+          </header>
+          <p class="song-meta">Key Am · 85 BPM</p>
+          <p class="song-prog"><span class="p-label">Chorus</span>
+            <span class="chord">Am</span><span class="chord">F</span><span class="chord">C</span><span class="chord">G</span>
+          </p>
+          <blockquote class="song-line">“Cause baby now we got bad blood…”</blockquote>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="colophon">
+    <h2>How to read this book</h2>
+    <ul>
+      <li><strong>●○○</strong> Easy · only open chords you already know.</li>
+      <li><strong>●●○</strong> Medium · slightly faster changes or a trickier key.</li>
+      <li><strong>●●●</strong> Stretch · longer songs, key changes, stamina builders.</li>
+      <li>Keys are chosen so every song works with <strong>open chords only</strong> — no barres.</li>
+      <li>Too low or high for your voice? Slap a <strong>capo</strong> on and the chords stay the same, the pitch moves.</li>
+    </ul>
+    <p class="fine-print">Chords here are simplified campfire versions for practice — not note-for-note transcriptions. Build the groove with one song, then steal its pattern for the next four: that's the whole trick. Made with HTML and CSS only — no JavaScript, no libraries.</p>
+  </footer>
+
+</body>
+</html>
